@@ -1,6 +1,6 @@
 # Trame · site
 
-Site de Trame : accueil, tarifs et à propos. HTML, CSS et JavaScript statiques, sans dépendance ni service tiers chargé.
+Site de Trame : accueil et tarifs. HTML, CSS et JavaScript statiques, sans dépendance ni service tiers chargé.
 
 C'est le site de Trame. Il remplace l'ancienne landing Trame (`trame-landing`), dont l'adresse redirige désormais ici. Il est séparé de l'application : on ne se connecte pas sur le site.
 
@@ -16,8 +16,11 @@ python3 -m http.server 8767 --directory .
 |---|---|
 | `index.html` | Accueil (repris de la landing Trame), formulaire d'inscription, mentions légales et confidentialité. |
 | `tarifs.html` | Trois formules, estimation selon le nombre d'arrivées, questions fréquentes, bandeau démo. |
-| `a-propos.html` | Pourquoi Trame, l'approche, les principes, l'équipe. |
 | `site.css`, `site.js` | Styles et comportements communs (menu des petits écrans, mesure, formulaire, estimation, démo, survol du hero). |
+
+## Mise en page
+
+Sur ordinateur, chaque section de l'accueil tient dans la hauteur de l'écran (tailles en `svh`, testé à 1280×720, 1440×800 et 1920×1000) : l'ordinateur du hero apparaît en entier dès l'arrivée. Le visuel des intégrations est une recomposition verticale de « trame konnect » (mêmes tuiles, fils redessinés), à côté du texte : `assets/illustrations/trame-connect-portrait-*`.
 
 ## À renseigner (en haut de `site.js`)
 
@@ -36,18 +39,14 @@ Le modèle retenu : à l'usage, par recrue accueillie, les deux premières offer
 - formule Entreprise sur devis : prix adapté au volume, facturation annuelle possible, déploiement préparé avec le client ;
 - au-delà de 60 arrivées par an, l'estimation oriente vers la formule Entreprise.
 
-## À propos
-
-L'ancien texte « À propos » n'a pas été retrouvé. La page s'appuie sur ce qui est documenté (principes produit, vision). Aucun nom de membre de l'équipe n'apparaît pour l'instant, à la demande des porteurs du projet : on écrit « notre équipe ». Aucun chiffre, témoignage ni parcours personnel n'a été ajouté.
-
 ## Mesure
 
-Mêmes points d'intégration que la landing : chaque événement est poussé dans `window.dataLayer` s'il existe, diffusé en `CustomEvent('landing:track')` et gardé dans `window.__landingEvents`. Chaque événement porte `site: 'trame'` et `page` (`accueil`, `tarifs`, `a-propos`). Ajouter `?debug-track` à l'URL pour les voir dans la console.
+Mêmes points d'intégration que la landing : chaque événement est poussé dans `window.dataLayer` s'il existe, diffusé en `CustomEvent('landing:track')` et gardé dans `window.__landingEvents`. Chaque événement porte `site: 'trame'` et `page` (`accueil`, `tarifs`). Ajouter `?debug-track` à l'URL pour les voir dans la console.
 
 | Événement | Quand | Paramètres |
 |---|---|---|
 | `page_view` | chargement d'une page | — |
-| `signup_cta_click` | clic sur « Commencer gratuitement » | `placement` : `nav`, `hero`, `integrations`, `footer`, `tarifs-haut`, `tarifs-bas`, `a-propos` |
+| `signup_cta_click` | clic sur « Commencer gratuitement » | `placement` : `nav`, `hero`, `integrations`, `footer`, `tarifs-haut`, `tarifs-bas` |
 | `plan_cta_click` | clic sur le bouton d'une formule | `plan` : `decouverte`, `equipe`, `entreprise` |
 | `demo_click` | clic sur « Réserver une démo » | `placement`, `configured` (lien renseigné ou non) |
 | `estimator_use` | première utilisation de l'estimation | — |

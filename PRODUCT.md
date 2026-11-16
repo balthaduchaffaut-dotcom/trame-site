@@ -13,7 +13,7 @@ Nom retenu pour ce draft. Disponibilité juridique, marque et domaines non véri
 - Entreprise (RH, direction).
 
 ## Surface
-Site marketing (accueil, tarifs, à propos), mode Persuade. Action principale : commencer gratuitement, deux arrivées offertes (formulaire e-mail + consentement) ; action secondaire : réserver une démo. Un clic sur un CTA n'est pas une inscription.
+Site marketing (accueil, tarifs), mode Persuade. Action principale : commencer gratuitement, deux arrivées offertes (formulaire e-mail + consentement) ; action secondaire : réserver une démo. Un clic sur un CTA n'est pas une inscription.
 
 Le site est séparé de l'application : on ne s'y connecte pas. Aucun nom de membre de l'équipe ne doit apparaître pour l'instant (on dit « notre équipe »).
 
