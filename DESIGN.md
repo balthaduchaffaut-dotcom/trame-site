@@ -1,5 +1,5 @@
 ---
-name: Trame — landing V2
+name: Trame — site
 description: Atelier de transmission — papier, encre, pêche ; le savoir rangé en classeur puis tissé en parcours.
 colors:
   papier: "#FFFCF6"
@@ -151,11 +151,11 @@ components:
     padding: "5px 10px"
 ---
 
-# Design System: Trame — landing V2
+# Design System: Trame — site
 
 ## Overview
 
-**Atelier de transmission.** La page se lit comme un classeur que l'on feuillette : du papier, des traits d'encre, des onglets pêche, et un fil pointillé qui relie les étapes jusqu'au drapeau. Le savoir de l'équipe y est montré comme un objet qu'on range, qu'on prépare et qu'on transmet. Rien n'est personnifié : pas de mascotte ni de bulle de personnage. La V1 (téléphone, collines, pilules, ombres) sert d'anti-référence.
+**Atelier de transmission.** La page se lit comme un classeur que l'on feuillette : du papier, des traits d'encre, des onglets pêche, et un fil pointillé qui relie les étapes jusqu'au drapeau. Le savoir de l'équipe y est montré comme un objet qu'on range, qu'on prépare et qu'on transmet. Rien n'est personnifié : pas de mascotte ni de bulle de personnage. L'ancienne direction (téléphone, collines, pilules, ombres) sert d'anti-référence.
 
 Direction imposée par le brief (palette, DM Sans, illustrations). Aucun tirage de direction n'a eu lieu : le monde était fixé par le commanditaire.
 

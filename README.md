@@ -2,7 +2,7 @@
 
 Site de Trame : accueil, tarifs et à propos. HTML, CSS et JavaScript statiques, sans dépendance ni service tiers chargé.
 
-Ce site est distinct de la landing du test A/B (`Landing/trame-landing`, variante B, et `Landing/lerenard`, variante A), qui restent inchangées. L'accueil reprend la landing Trame, avec le modèle gratuit à la place de la bêta.
+C'est le site de Trame. Il remplace l'ancienne landing Trame (`trame-landing`), dont l'adresse redirige désormais ici. Il est séparé de l'application : on ne se connecte pas sur le site.
 
 En ligne : https://balthaduchaffaut-dotcom.github.io/trame-site/ (page `noindex`). Aperçu local :
 
@@ -38,7 +38,7 @@ Le modèle retenu : à l'usage, par recrue accueillie, les deux premières offer
 
 ## À propos
 
-L'ancienne page « À propos » du Renard n'a pas été retrouvée (ni dans `Archives/le-renard-github.zip`, ni dans l'historique de `lerenard`). La page s'appuie sur ce qui est documenté : `PRODUCT.md` du MVP (principes), le document de vision (approche) et les mentions légales (porteurs du projet). Aucun chiffre, témoignage ou parcours personnel n'a été ajouté : à compléter quand le texte d'origine sera retrouvé.
+L'ancien texte « À propos » n'a pas été retrouvé. La page s'appuie sur ce qui est documenté (principes produit, vision). Aucun nom de membre de l'équipe n'apparaît pour l'instant, à la demande des porteurs du projet : on écrit « notre équipe ». Aucun chiffre, témoignage ni parcours personnel n'a été ajouté.
 
 ## Mesure
 
@@ -58,7 +58,8 @@ Mêmes points d'intégration que la landing : chaque événement est poussé dan
 
 ## Encore à compléter
 
-- Mentions légales : adresse, directeur de la publication, hébergeur (GitHub, Inc. pour GitHub Pages).
+- Mentions légales : identité de l'éditeur (retirée pour l'instant, obligatoire avant une diffusion publique), adresse, directeur de la publication, hébergeur (GitHub, Inc. pour GitHub Pages).
+- Confidentialité : identité du responsable du traitement (retirée pour l'instant, exigée par le RGPD).
 - Confidentialité : date, prestataires et transferts hors UE.
 - Adresse de contact : `contact@votre-domaine.fr` partout.
 - Promesses à confirmer côté produit : « Vos compétences et vos données restent chez vous », les intégrations du visuel, les chiffres de l'accueil (sources à préciser).
