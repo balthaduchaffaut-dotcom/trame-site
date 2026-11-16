@@ -225,12 +225,16 @@
 .trame .loom__cell,.trame .proof{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .trame .loom__cell{display:grid;align-content:start;gap:10px;padding:clamp(24px,3vw,40px)}
 .trame .loom__cell p{font-size:16px;line-height:1.55;color:var(--muted);max-width:30em}
-.trame .picto{width:112px;height:112px;margin:-8px 0 10px -8px}
+.trame .picto{width:136px;height:136px;margin:-10px 0 8px -10px}
+.trame .loom__cell .picto{width:148px;height:148px;margin:0 0 12px}
 @media (max-width:639.98px){
-  .trame .loom__cell{grid-template-columns:76px minmax(0,1fr);column-gap:16px;align-items:start}
-  .trame .loom__cell .picto{grid-row:span 2;width:84px;height:84px;margin:-10px 0 0 -10px}
+  .trame .loom__cell{grid-template-columns:96px minmax(0,1fr);column-gap:16px;align-items:start}
+  .trame .loom__cell .picto{grid-row:span 2;width:96px;height:96px;margin:0}
 }
 .trame .picto img{width:100%;height:100%;object-fit:contain}
+/* Les pictogrammes de l'arrivant ont une large marge de papier : on les agrandit dans leur case pour qu'ils portent la section. */
+.trame .loom__cell .picto{overflow:hidden}
+.trame .loom__cell .picto img{transform:scale(1.42)}
 .trame .proof{display:grid;align-content:center;gap:8px 24px;margin:0;padding:clamp(24px,3vw,40px);background:var(--apricot)}
 .trame .proof__value{font-size:clamp(56px,6vw,96px);font-weight:600;line-height:.9;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
 .trame .proof__label{font-size:clamp(17px,1.4vw,20px);font-weight:500;line-height:1.35;max-width:22em}
@@ -446,22 +450,17 @@
   .trame .step__node{margin-bottom:16px}
   .trame .step__art{max-width:min(100%,calc(24svh * 1.5));margin-bottom:14px}
   /* Pour l'arrivant : pictogramme à gauche du texte, cases plus basses. */
-  .trame .loom__cell{grid-template-columns:76px minmax(0,1fr);column-gap:18px;align-items:start;padding:clamp(18px,2.2svh,30px) clamp(20px,2vw,32px)}
-  .trame .loom__cell .picto{grid-row:span 2;width:84px;height:84px;margin:-10px 0 0 -10px}
+  .trame .loom__cell{grid-template-columns:clamp(112px,min(10vw,17svh),168px) minmax(0,1fr);column-gap:clamp(14px,1.4vw,22px);align-items:center;padding:clamp(14px,2svh,24px) clamp(16px,1.6vw,24px)}
+  .trame .loom__cell p{font-size:15px;line-height:1.5}
+  .trame .loom__cell .picto{grid-row:span 2;align-self:center;width:100%;height:auto;aspect-ratio:1;margin:0}
+  .trame .loom__cell h3{align-self:end}
+  .trame .loom__cell p{align-self:start}
   .trame .proof{padding-block:clamp(16px,2.4svh,28px)}
   .trame .proof__value{font-size:clamp(48px,min(5vw,9svh),80px)}
 }
 
-/* Intégrations : le texte à gauche, le tableau des connexions en hauteur à droite. */
-.trame .connect{display:grid;gap:40px;align-items:center}
-.trame .connect__text{display:grid;gap:24px;justify-items:start;max-width:32em}
-.trame .connect__text h2{max-width:12em}
-.trame .connect__text p{color:var(--on-ink-muted)}
-.trame .board--portrait{width:100%;max-width:440px;justify-self:center}
-@media (min-width:900px){
-  .trame .connect{grid-template-columns:minmax(0,1fr) auto;gap:clamp(40px,6vw,96px)}
-  .trame .board--portrait{justify-self:end;width:clamp(300px,calc((100svh - var(--masthead) - 2 * var(--section) - 2 * clamp(10px,2.4vw,32px)) * 1180 / 1528 + 2 * clamp(10px,2.4vw,32px)),480px);max-width:none}
-}
+/* Intégrations : le bandeau des connexions sous le titre ; sur petit écran, sa version en hauteur. */
+@media (max-width:899px){.trame .board{max-width:440px;margin-inline:auto}}
 
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion:reduce){

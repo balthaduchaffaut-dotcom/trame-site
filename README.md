@@ -20,7 +20,7 @@ python3 -m http.server 8767 --directory .
 
 ## Mise en page
 
-Sur ordinateur, chaque section de l'accueil tient dans la hauteur de l'écran (tailles en `svh`, testé à 1280×720, 1440×800 et 1920×1000) : l'ordinateur du hero apparaît en entier dès l'arrivée. Le visuel des intégrations est une recomposition verticale de « trame konnect » (mêmes tuiles, fils redessinés), à côté du texte : `assets/illustrations/trame-connect-portrait-*`.
+Sur ordinateur, chaque section de l'accueil tient dans la hauteur de l'écran (tailles en `svh`, testé à 1280×720, 1440×800 et 1920×1000) : l'ordinateur du hero apparaît en entier dès l'arrivée. Le visuel des intégrations est une recomposition de « trame konnect » (mêmes tuiles, fils redessinés) : un bandeau large et aplati sous le titre sur ordinateur (`trame-connect-large-*`, 3,6:1, le T plus petit au centre), une version verticale sur mobile et tablette (`trame-connect-portrait-*`). Les pictogrammes de la section « Pour l'arrivant » sont agrandis dans leur case (leur image a une large marge de papier).
 
 ## À renseigner (en haut de `site.js`)
 
