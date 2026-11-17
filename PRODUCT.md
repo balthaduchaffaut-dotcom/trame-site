@@ -18,6 +18,8 @@ Site marketing (accueil, tarifs), mode Persuade. Action principale : commencer g
 Le site est séparé de l'application : on ne s'y connecte pas. Aucun nom de membre de l'équipe ne doit apparaître pour l'instant (on dit « notre équipe »).
 
 ## Vérités à respecter
+- Données (confirmé par l'équipe le 17 novembre 2026) : base et fichiers hébergés en France, sur des serveurs à Paris (Supabase et Vercel) ; les modèles d'IA utilisés ne s'entraînent pas sur les contenus des clients. Rien d'autre (chiffrement, RGPD outillé, SSO…) n'est affirmé.
+- Offre gratuite : deux arrivées offertes. Ce qu'on demande : autant de documents que possible, et deux échanges de 30 minutes avec le manager (lancement, bilan). Parti pris : on ne promet pas la vitesse ; le temps investi se retrouve dans la qualité de l'accueil.
 - Pas de mascotte, pas de personnification : le produit rassemble, organise, propose, prépare, prévient. Les personnes restent le manager, la recrue, les collègues.
 - Aucune fonctionnalité, preuve, client, chiffre ou promesse ajoutés. Les chiffres et promesses repris de la première landing ne sont pas vérifiés.
 - Points, niveaux et durée ne prouvent pas l'autonomie réelle.

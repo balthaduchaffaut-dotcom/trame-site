@@ -22,6 +22,23 @@ python3 -m http.server 8767 --directory .
 
 Sur ordinateur, chaque section de l'accueil tient dans la hauteur de l'écran (tailles en `svh`, testé à 1280×720, 1440×800 et 1920×1000) : l'ordinateur du hero apparaît en entier dès l'arrivée. Le visuel des intégrations est une recomposition de « trame konnect » (mêmes tuiles, fils redessinés) : un bandeau large et aplati sous le titre sur ordinateur (`trame-connect-large-*`, 3,6:1, le T plus petit au centre), une version verticale sur mobile et tablette (`trame-connect-portrait-*`). Les pictogrammes de la section « Pour l'arrivant » sont agrandis dans leur case (leur image a une large marge de papier).
 
+## Sections ajoutées après l'analyse de Weloom (17 novembre 2026)
+
+- **Vos données**, sous le hero : hébergement à Paris (Supabase et Vercel) et aucun entraînement d'IA sur les contenus, confirmés par l'équipe.
+- **Comparatif** (`#comparatif`) : trois objections (« On a déjà ChatGPT / Notion / un LMS ») et un tableau ChatGPT, Notion, LMS, Trame. Les cases de Trame ne reprennent que ce que le site affirme déjà ; sur mobile, le tableau défile dans son cadre.
+- **L'offre gratuite** dans la section Commencer : parti pris (le temps investi fait la qualité, pas la vitesse), ce que vous obtenez, ce que nous demandons, pour qui.
+
+## Vérifier
+
+Avec le site servi en local (`python3 -m http.server 8767 --directory .`) :
+
+```bash
+node outils/verifier.mjs http://127.0.0.1:8767/
+node outils/mesurer.mjs http://127.0.0.1:8767/
+```
+
+`verifier.mjs` contrôle le débordement, le hero, les visuels, le comparatif, le formulaire, l'absence de requête externe et d'erreur ; `mesurer.mjs` donne la hauteur de chaque section face à l'écran (Chrome requis).
+
 ## À renseigner (en haut de `site.js`)
 
 - `ENDPOINT` : identifiant Formspree du formulaire d'inscription. Tant que `VOTRE_ID` reste en place, le formulaire affiche un message d'aperçu et n'envoie rien.

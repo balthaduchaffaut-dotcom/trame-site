@@ -63,6 +63,16 @@
     </div>
   </section>
 
+  <aside class="trust" aria-label="Vos données">
+    <div class="wrap trust__bar">
+      <p class="trust__label">Vos données</p>
+      <ul class="trust__list">
+        <li class="trust__item"><svg class="trust__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg><p><b>Hébergées en France</b> <span>Base et fichiers sur des serveurs à Paris (Supabase et Vercel).</span></p></li>
+        <li class="trust__item"><svg class="trust__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M12 14.5v2.5"/></svg><p><b>Jamais utilisées pour entraîner une IA</b> <span>Les modèles d'IA que nous utilisons ne s'entraînent pas sur vos contenus.</span></p></li>
+      </ul>
+    </div>
+  </aside>
+
   <section class="intro">
     <div class="wrap intro__grid">
       <p class="intro__statement">Chaque arrivée coûte <span>à tout le monde.</span></p>
@@ -177,6 +187,36 @@
     </div>
   </section>
 
+  <section id="comparatif" class="section" aria-labelledby="comparatif-title" tabindex="-1">
+    <div class="wrap">
+      <p class="tab" style="--tab-i:2.5">Comparatif</p>
+      <div class="lede">
+        <h2 id="comparatif-title">Pourquoi pas ChatGPT, Notion <mark>ou un LMS ?</mark></h2>
+        <p>Chacun a sa place dans une équipe. Aucun n'a été pensé pour préparer une arrivée.</p>
+      </div>
+      <div class="objections">
+        <article class="objection"><h3>« On a déjà ChatGPT »</h3><p>Un assistant généraliste ne connaît ni vos procédures, ni vos clients, ni vos habitudes. Il répond quand on l'interroge, mais ne prépare rien et ne suit personne.</p></article>
+        <article class="objection"><h3>« On a déjà Notion »</h3><p>Un wiki range ce que quelqu'un a pris le temps d'écrire. Le savoir du manager, écrit nulle part, n'y entre jamais, et la recrue doit tout lire seule.</p></article>
+        <article class="objection"><h3>« On a déjà un LMS »</h3><p>Une plateforme de formation demande de produire chaque module avant de commencer. Trame part de ce qui existe déjà et en tire le parcours de chaque poste.</p></article>
+      </div>
+      <div class="compare" role="region" aria-labelledby="compare-cap" tabindex="0">
+        <table class="compare__table">
+          <caption id="compare-cap" class="visually-hidden">Ce que font ChatGPT, Notion, un LMS et Trame pour préparer une arrivée</caption>
+          <thead><tr><th scope="col">Pour préparer une arrivée</th><th scope="col">ChatGPT</th><th scope="col">Notion</th><th scope="col">LMS</th><th scope="col" class="compare__us">Trame</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Part de vos outils et de vos documents</th><td><span class="compare__part">Si vous les copiez</span></td><td><span class="compare__part">Ce qui y est écrit</span></td><td><span class="compare__part">Limité</span></td><td class="compare__us"><svg class="compare__yes" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="Oui"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></td></tr>
+            <tr><th scope="row">Recueille le savoir du manager, à l'oral</th><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td class="compare__us"><svg class="compare__yes" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="Oui"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></td></tr>
+            <tr><th scope="row">Prépare un parcours par poste, dans l'ordre</th><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td><span class="compare__part">À écrire soi-même</span></td><td><span class="compare__part">À construire soi-même</span></td><td class="compare__us"><svg class="compare__yes" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="Oui"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></td></tr>
+            <tr><th scope="row">Accompagne la recrue sur ses vraies tâches</th><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td class="compare__us"><svg class="compare__yes" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="Oui"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></td></tr>
+            <tr><th scope="row">Répond avec les ressources de l'équipe</th><td><span class="compare__part">Réponses générales</span></td><td><span class="compare__part">Partiel</span></td><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td class="compare__us"><svg class="compare__yes" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="Oui"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></td></tr>
+            <tr><th scope="row">Garde le savoir quand quelqu'un part</th><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td><span class="compare__part">Si quelqu'un l'écrit</span></td><td><span class="compare__no"><span aria-hidden="true">—</span><span class="visually-hidden">Non</span></span></td><td class="compare__us"><svg class="compare__yes" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="Oui"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></td></tr>
+            <tr><th scope="row">Données hébergées en France, sans entraînement</th><td><span class="compare__part">Selon l'offre</span></td><td><span class="compare__part">Selon l'offre</span></td><td><span class="compare__part">Variable</span></td><td class="compare__us"><svg class="compare__yes" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="Oui"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <section id="recrue" class="section" aria-labelledby="recrue-title" tabindex="-1">
     <div class="wrap">
       <p class="tab" style="--tab-i:3">Pour l'arrivant</p>
@@ -276,6 +316,12 @@
         <div class="beta__intro">
           <h2 id="beta-title">Vous accueillez quelqu'un bientôt ?</h2>
           <p>Vos deux premières arrivées sont offertes. Laissez-nous votre e-mail : on vous écrit personnellement pour ouvrir votre accès et préparer la première. <a href="tarifs.html">Voir les tarifs</a></p>
+          <p class="offer__stance">Notre parti pris : on ne promet pas d'aller vite. Le temps que vous investissez se retrouve dans la qualité de l'accueil.</p>
+          <dl class="offer">
+            <div><dt>Ce que vous obtenez</dt><dd>Le parcours complet de vos deux prochaines recrues, préparé à partir de vos outils et de vos documents, et leur accompagnement sur leurs vraies tâches.</dd></div>
+            <div><dt>Ce que nous vous demandons</dt><dd>Autant de documents que possible : fiches de poste, procédures, livret d'accueil, présentations. Et deux échanges de 30 minutes avec le manager, au lancement puis au bilan.</dd></div>
+            <div><dt>Pour qui</dt><dd>Les entreprises qui recrutent, avec une arrivée prévue dans les prochains mois.</dd></div>
+          </dl>
         </div>
         <div class="sheet">
           <form id="beta-form" class="form" novalidate>

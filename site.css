@@ -275,7 +275,7 @@
 /* ---------- Bêta : la clôture à l'encre ---------- */
 .trame .section--ink{background:var(--ink);color:var(--on-ink)}
 .trame .beta{display:grid;gap:44px;align-items:start}
-.trame .beta__intro h2{margin-bottom:24px;font-size:clamp(36px,4.6vw,68px);line-height:1;letter-spacing:-.04em}
+.trame .beta__intro h2{margin-bottom:20px;font-size:clamp(34px,min(4.2vw,7.5svh),64px);line-height:1;letter-spacing:-.04em}
 .trame .beta__intro p{max-width:28em;color:var(--on-ink-muted)}
 .trame .sheet{background:var(--paper);color:var(--ink);border-radius:var(--radius-panel);padding:clamp(22px,3vw,40px)}
 @media (min-width:960px){.trame .beta{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px}.trame .beta__intro{position:sticky;top:calc(var(--masthead) + 40px)}}
@@ -461,6 +461,51 @@
 
 /* Intégrations : le bandeau des connexions sous le titre ; sur petit écran, sa version en hauteur. */
 @media (max-width:899px){.trame .board{max-width:440px;margin-inline:auto}}
+
+/* ---------- Vos données : bandeau de confiance sous le hero ---------- */
+.trame .trust{border-top:1px solid var(--ink);background:var(--paper)}
+.trame .trust__bar{display:grid;gap:14px 40px;padding-block:clamp(18px,2.6svh,28px)}
+.trame .trust__label{font-size:14px;font-weight:600;color:var(--muted)}
+.trame .trust__list{list-style:none;margin:0;padding:0;display:grid;gap:14px 40px}
+.trame .trust__item{display:flex;gap:14px;align-items:flex-start}
+.trame .trust__item p{font-size:16px;line-height:1.45}
+.trame .trust__item b{font-weight:600}
+.trame .trust__item span{color:var(--muted)}
+.trame .trust__icon{flex:none;fill:var(--peach);stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.trame .trust__icon path:last-child{fill:none}
+@media (min-width:900px){
+  .trame .trust__bar{grid-template-columns:auto minmax(0,1fr);align-items:center}
+  .trame .trust__list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ---------- Comparatif : ChatGPT, Notion, un LMS et Trame ---------- */
+.trame .objections{display:grid;gap:20px;margin-bottom:clamp(24px,3.5svh,40px)}
+.trame .objection{padding-top:16px;border-top:2px solid var(--ink)}
+.trame .objection h3{margin-bottom:8px}
+.trame .objection p{font-size:15px;line-height:1.5;color:var(--muted)}
+@media (min-width:768px){.trame .objections{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px)}}
+.trame .compare{position:relative;overflow-x:auto;border:1px solid var(--ink);border-radius:var(--radius-panel);background:var(--paper)}
+.trame .compare:focus-visible{outline-offset:2px}
+.trame .compare__table{width:100%;min-width:640px;border-collapse:collapse;font-size:15px;line-height:1.35}
+.trame .compare__table th,.trame .compare__table td{padding:clamp(9px,1.3svh,14px) clamp(12px,1.4vw,20px);border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
+.trame .compare__table tbody tr:last-child>*{border-bottom:0}
+.trame .compare__table thead th{font-size:14px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--ink)}
+.trame .compare__table th[scope=row],.trame .compare__table thead th:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.trame .compare__table thead th:first-child{color:var(--muted);font-weight:600}
+.trame .compare__table th[scope=row]{position:sticky;left:0;background:var(--paper);min-width:12em}
+/* La colonne Trame : la bande pêche du relief du logo. */
+.trame .compare__us{background:var(--apricot);width:16%}
+.trame .compare__table thead .compare__us{background:var(--peach);color:var(--ink);font-size:16px}
+.trame .compare__yes{display:inline-block;fill:none;stroke:var(--ember);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.trame .compare__no{color:var(--line);font-weight:600}
+.trame .compare__part{font-size:14px;color:var(--muted)}
+
+/* ---------- L'offre gratuite, telle qu'on la pratique ---------- */
+.trame .offer__stance{margin-top:18px;padding-left:16px;border-left:2px solid var(--peach);color:var(--on-ink)!important;font-weight:500}
+.trame .offer{display:grid;gap:12px;margin-top:20px}
+.trame .offer>div{padding-top:12px;border-top:1px solid rgba(255,252,246,.22)}
+.trame .offer dt{font-size:14px;font-weight:600;color:var(--peach);margin-bottom:4px}
+.trame .offer dd{margin:0;font-size:15px;line-height:1.5;color:var(--on-ink-muted);max-width:30em}
 
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion:reduce){
