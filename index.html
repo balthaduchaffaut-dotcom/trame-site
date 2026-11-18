@@ -54,11 +54,16 @@
         <p class="hero__note">Vos deux premières arrivées sont offertes. <a href="tarifs.html">Voir les tarifs</a></p>
       </div>
       <figure class="hero__art">
-        <picture>
-          <source type="image/avif" srcset="assets/illustrations/hero-ma-premiere-semaine-720.avif 720w, assets/illustrations/hero-ma-premiere-semaine-1090.avif 1090w" sizes="(min-width: 1100px) 700px, (min-width: 900px) 56vw, calc(100vw - 40px)">
-          <img src="assets/illustrations/hero-ma-premiere-semaine-1090.jpg" width="1090" height="920" fetchpriority="high" decoding="async" alt="Un ordinateur portable ouvert sur l'espace Trame d'une recrue : la liste « Ma première semaine » (rencontrer mon équipe, découvrir les outils, ma première mission) et un panneau « Mes ressources ».">
-        </picture>
-        <svg class="hero-steam" viewBox="0 0 1090 920" aria-hidden="true" focusable="false"><path pathLength="100" d="M156 426C141 404 171 386 156 372S141 334 156 318"/><path pathLength="100" d="M182 422C165 396 199 372 182 356S165 310 182 290"/><path pathLength="100" d="M208 426C193 405 223 387 208 374S193 338 208 322"/></svg>
+        <div class="hero__frame">
+          <p class="hero__strip" aria-hidden="true"><span>Ma première semaine</span><span>2 arrivées offertes</span></p>
+          <div class="hero__stage">
+            <picture>
+              <source type="image/avif" srcset="assets/illustrations/hero-ma-premiere-semaine-720.avif 720w, assets/illustrations/hero-ma-premiere-semaine-1090.avif 1090w" sizes="(min-width: 1100px) 700px, (min-width: 900px) 56vw, calc(100vw - 40px)">
+              <img src="assets/illustrations/hero-ma-premiere-semaine-1090.jpg" width="1090" height="920" fetchpriority="high" decoding="async" alt="Un ordinateur portable ouvert sur l'espace Trame d'une recrue : la liste « Ma première semaine » (rencontrer mon équipe, découvrir les outils, ma première mission) et un panneau « Mes ressources ».">
+            </picture>
+            <svg class="hero-steam" viewBox="0 0 1090 920" aria-hidden="true" focusable="false"><path pathLength="100" d="M156 426C141 404 171 386 156 372S141 334 156 318"/><path pathLength="100" d="M182 422C165 396 199 372 182 356S165 310 182 290"/><path pathLength="100" d="M208 426C193 405 223 387 208 374S193 338 208 322"/></svg>
+          </div>
+        </div>
       </figure>
     </div>
   </section>
@@ -67,8 +72,8 @@
     <div class="wrap trust__bar">
       <p class="trust__label">Vos données</p>
       <ul class="trust__list">
-        <li class="trust__item"><svg class="trust__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg><p><b>Hébergées en France</b> <span>Base et fichiers sur des serveurs à Paris (Supabase et Vercel).</span></p></li>
-        <li class="trust__item"><svg class="trust__icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M12 14.5v2.5"/></svg><p><b>Jamais utilisées pour entraîner une IA</b> <span>Les modèles d'IA que nous utilisons ne s'entraînent pas sur vos contenus.</span></p></li>
+        <li class="trust__item"><p><b>Hébergées en France</b> <span>Base et fichiers sur des serveurs à Paris (Supabase et Vercel).</span></p></li>
+        <li class="trust__item"><p><b>Jamais utilisées pour entraîner une IA</b> <span>Les modèles d'IA que nous utilisons ne s'entraînent pas sur vos contenus.</span></p></li>
       </ul>
     </div>
   </aside>

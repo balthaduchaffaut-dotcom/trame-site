@@ -501,11 +501,130 @@
 .trame .compare__part{font-size:14px;color:var(--muted)}
 
 /* ---------- L'offre gratuite, telle qu'on la pratique ---------- */
-.trame .offer__stance{margin-top:18px;padding-left:16px;border-left:2px solid var(--peach);color:var(--on-ink)!important;font-weight:500}
+.trame .offer__stance{margin-top:18px;font-weight:500}
 .trame .offer{display:grid;gap:12px;margin-top:20px}
 .trame .offer>div{padding-top:12px;border-top:1px solid rgba(255,252,246,.22)}
 .trame .offer dt{font-size:14px;font-weight:600;color:var(--peach);margin-bottom:4px}
 .trame .offer dd{margin:0;font-size:15px;line-height:1.5;color:var(--on-ink-muted);max-width:30em}
+
+/* ---------- Direction « Classeur » : le néo-brutalisme dans le système Trame ----------
+   Traits d'encre de 3 px, ombres franches sans flou (encre sur papier, pêche sur encre),
+   titres plus gras, aplats pêche et abricot, clôtures en braise. Les boutons se soulèvent
+   au survol et s'enfoncent au clic. */
+.trame{--rule:3px;--press:cubic-bezier(.2,.8,.2,1)}
+.trame h1,.trame h2{font-weight:800;letter-spacing:-.045em}
+.trame h3{font-weight:700}
+/* Surlignage au feutre : une bande pêche dans le bas des lettres, qui ne touche jamais la ligne du dessus. */
+.trame mark{text-decoration:none;background:linear-gradient(to bottom,transparent 60%,var(--peach) 60%,var(--peach) 92%,transparent 92%);padding:0 .05em;margin:0 -.05em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.trame .section--ink mark{background:none;text-decoration:underline;text-decoration-color:var(--peach);text-decoration-thickness:.16em;text-underline-offset:.08em;text-decoration-skip-ink:none}
+
+/* Bandeau, sections, intercalaires */
+.trame .masthead{border-bottom:var(--rule) solid var(--ink)}
+.trame .nav__link{font-weight:600}
+.trame .section{border-top:var(--rule) solid var(--ink)}
+.trame .intro{border-block:var(--rule) solid var(--ink)}
+.trame .tab{top:calc(-1 * var(--section) - var(--rule));padding:9px 18px 7px;border:var(--rule) solid var(--ink);border-bottom:0;border-radius:10px 10px 0 0;font-size:15px;font-weight:800}
+.trame .tab--last{background:var(--ink);color:var(--paper)}
+
+/* Boutons : encre (« Commencer gratuitement ») sur relief pêche, contour sur relief d'encre */
+.trame .btn{border:var(--rule) solid var(--ink);border-radius:8px;font-weight:700;background:var(--ink);color:var(--paper);box-shadow:5px 5px 0 var(--peach);transition:transform 120ms var(--press),box-shadow 120ms var(--press)}
+.trame .btn:hover{background:var(--ink);border-color:var(--ink);color:var(--paper);transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--peach)}
+.trame .btn:active{background:var(--ink);border-color:var(--ink);transform:translate(4px,4px);box-shadow:0 0 0 var(--peach)}
+.trame .btn--sm{box-shadow:4px 4px 0 var(--peach)}
+.trame .btn--ghost,.trame .btn--paper{background:var(--paper);color:var(--ink);border-color:var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.trame .btn--ghost:hover,.trame .btn--paper:hover{background:var(--paper);color:var(--ink);border-color:var(--ink);box-shadow:8px 8px 0 var(--ink)}
+.trame .btn--ghost:active,.trame .btn--paper:active{background:var(--paper);box-shadow:0 0 0 var(--ink)}
+.trame .btn--on-ink,.trame .btn--on-ink:hover,.trame .btn--on-ink:active{background:var(--ink);color:var(--paper);border-color:var(--paper)}
+.trame .btn:disabled{transform:none;box-shadow:none}
+
+/* Hero : cases cochées et ordinateur posé sur une fiche, légèrement de biais */
+.trame .hero .ticks{gap:10px}
+.trame .hero .ticks li{padding:10px 14px;border:var(--rule) solid var(--ink);border-radius:8px;background:var(--paper);line-height:1.45}
+.trame .tick{stroke-width:3}
+.trame .hero__frame{background:var(--paper);border:var(--rule) solid var(--ink);box-shadow:12px 12px 0 var(--ink);transform:rotate(-1.5deg)}
+.trame .hero__strip{display:flex;justify-content:space-between;gap:16px;padding:10px 16px;border-bottom:var(--rule) solid var(--ink);font-size:14px;font-weight:800;line-height:1.2}
+.trame .hero__strip span:last-child{color:var(--ember)}
+.trame .hero__stage{position:relative}
+.trame .hero__art{margin-right:12px}
+@media (min-width:900px){
+  /* La fiche démarre sous la première ligne du titre ; sa hauteur suit celle de l'écran. */
+  .trame .hero__art{--lift:calc(1.06 * var(--h1) + var(--hero-gap));
+    --art-h:calc(100svh - var(--masthead) - var(--hero-pad) - 2.15 * var(--h1) - var(--hero-gap) + var(--lift) - 44px);
+    width:min(calc(100% - 12px),max(400px,calc((var(--art-h) - 50px) * 1090 / 920 + 6px)),calc(min(1240px,100vw - 2 * var(--gutter)) - 7.6 * var(--h1) - 40px));margin:calc(-1 * var(--lift)) 12px 0 0;justify-self:end}
+  /* largeur plafonnée : la fiche commence toujours après « en quelques jours. » */
+}
+
+/* Vos données : bande d'encre */
+.trame .trust{background:var(--ink);color:var(--paper);border-top:0}
+.trame .trust__label{justify-self:start;padding:5px 12px;background:var(--peach);color:var(--ink);border-radius:6px;font-weight:800}
+.trame .trust__item b{color:var(--peach);font-weight:800}
+.trame .trust__item span{color:var(--on-ink-muted)}
+
+/* Relevé, étapes, étiquettes */
+.trame .ledger{border-bottom:2px solid var(--ink)}
+.trame .ledger__row{border-top:2px solid var(--ink)}
+.trame .ledger dt{font-weight:800}
+.trame .step__node{border:var(--rule) solid var(--ink);font-weight:800}
+.trame .tag{border:2px solid var(--ink);border-radius:6px;font-weight:600;box-shadow:3px 3px 0 var(--peach)}
+
+/* Intégrations : la feuille garde son relief pêche, avec un contour */
+.trame .board__sheet{border:var(--rule) solid var(--paper);border-radius:12px}
+
+/* Comparatif */
+.trame .objection{border-top:var(--rule) solid var(--ink)}
+.trame .compare{border:var(--rule) solid var(--ink);border-radius:12px;box-shadow:10px 10px 0 var(--ink)}
+.trame .compare__table th,.trame .compare__table td{border-bottom:2px solid var(--ink)}
+.trame .compare__table thead th,.trame .compare__table thead th:first-child{background:var(--ink);color:var(--paper);border-bottom:0}
+.trame .compare__table thead .compare__us{background:var(--ember);color:var(--paper);font-weight:800}
+.trame .compare__table td.compare__us{background:var(--peach);border-left:var(--rule) solid var(--ink)}
+.trame .compare__no{color:var(--muted)}
+
+/* Pour l'arrivant : six fiches en aplats, pictogrammes sur papier */
+.trame .loom,.trame .loom.loom{border:0;gap:clamp(16px,2vw,28px)}
+.trame .loom__cell,.trame .proof{border:var(--rule) solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--ink)}
+.trame .loom__cell:nth-child(6n+1),.trame .loom__cell:nth-child(6n+6){background:var(--peach)}
+.trame .loom__cell:nth-child(6n+2),.trame .loom__cell:nth-child(6n+4){background:var(--apricot)}
+.trame .loom__cell:nth-child(6n+3),.trame .loom__cell:nth-child(6n+5){background:var(--paper)}
+.trame .loom__cell p{color:var(--ink)}
+.trame .loom__cell .picto{background:var(--paper);border:var(--rule) solid var(--ink);border-radius:10px}
+@media (min-width:1024px){
+  .trame .loom__cell{grid-template-columns:clamp(92px,min(7.6vw,13.5svh),128px) minmax(0,1fr);padding:clamp(14px,1.9svh,22px) clamp(14px,1.4vw,22px)}
+  .trame .loom__cell h3{font-size:clamp(18px,1.4vw,21px)}
+}
+.trame .proof{background:var(--ink);color:var(--paper)}
+.trame .proof__value{color:var(--peach)}
+.trame .proof__source{color:var(--on-ink-muted)}
+
+/* Pour qui */
+.trame .audience h3{font-weight:800}
+
+/* Clôtures en braise : l'inscription et la démo */
+.trame #commencer.section--ink,.trame #demo.section--ink{background:var(--ember)}
+.trame #commencer .beta__intro p,.trame #commencer .beta__intro a,.trame #demo .closing__side>p:first-child{color:var(--paper)}
+.trame #commencer a:focus-visible,.trame #demo a:focus-visible{outline-color:var(--paper)}
+.trame .offer__stance{margin-top:20px;padding:14px 16px;border:var(--rule) solid var(--ink);border-radius:10px;background:var(--paper);color:var(--ink)!important;box-shadow:5px 5px 0 var(--ink);font-weight:700}
+.trame .offer>div{border-top:2px solid rgba(255,252,246,.4)}
+.trame .offer dt{color:var(--paper);font-weight:800}
+.trame .offer dd{color:var(--paper)}
+.trame .closing__msg{color:var(--paper);font-weight:600}
+.trame .sheet{border:var(--rule) solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+.trame input[type=email],.trame input[type=text],.trame select,.trame .choice{border:2px solid var(--ink)}
+
+/* Tarifs */
+.trame .plan{border:var(--rule) solid var(--ink);border-radius:12px;box-shadow:8px 8px 0 var(--ink)}
+.trame .plan--main{background:var(--peach);box-shadow:8px 8px 0 var(--ink)}
+.trame .plan--main .plan__unit,.trame .plan--main .plan__amount--todo,.trame .plan--main .plan__tax,.trame .plan--main .plan__todo{color:var(--ink)}
+.trame .plan__desc{border-top:2px solid var(--ink)}
+.trame .plan__flag{top:calc(-1 * var(--rule));border:var(--rule) solid var(--ink);border-bottom:0;font-weight:800}
+.trame .estimator{border:var(--rule) solid var(--ink);border-radius:12px;box-shadow:10px 10px 0 var(--ink)}
+.trame .estimator__out,.trame .estimator__out>div{border-color:var(--ink)}
+.trame .faq__list,.trame .faq__item{border-color:var(--ink)}
+.trame .faq__item{border-top-width:2px}
+
+/* Pied de page */
+.trame .colophon{border-top:var(--rule) solid var(--ink)}
+.trame .colophon__bottom{border-top:var(--rule) solid var(--ink)}
+@media (max-width:1040px){.has-menu .trame .nav{border-bottom:var(--rule) solid var(--ink)}}
 
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion:reduce){

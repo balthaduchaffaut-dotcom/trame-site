@@ -99,9 +99,10 @@ rounded:
   focus: "2px"
   onglet: "4px"
   intercalaire-haut: "8px"
-  controle: "6px"
-  intercalaire: "8px 8px 0 0"
+  controle: "8px"
+  intercalaire: "10px 10px 0 0"
   panneau: "10px"
+  fiche: "12px"
 spacing:
   gouttiere: "clamp(20px, 4vw, 56px)"
   section: "clamp(80px, 9vw, 136px)"
@@ -157,15 +158,17 @@ components:
 
 **Atelier de transmission.** La page se lit comme un classeur que l'on feuillette : du papier, des traits d'encre, des onglets pêche, et un fil pointillé qui relie les étapes jusqu'au drapeau. Le savoir de l'équipe y est montré comme un objet qu'on range, qu'on prépare et qu'on transmet. Rien n'est personnifié : pas de mascotte ni de bulle de personnage. L'ancienne direction (téléphone, collines, pilules, ombres) sert d'anti-référence.
 
+**Direction « Classeur » (18 novembre 2026).** Le même monde, poussé vers le néo-brutalisme : traits d'encre de 3 px, ombres franches sans flou, titres en 800, aplats pêche et abricot, clôtures en braise. Choisie parmi trois maquettes (A Relief, B Classeur, C Planche) ; le cadre de l'ordinateur du hero vient de C, le bouton principal reste en encre.
+
 Direction imposée par le brief (palette, DM Sans, illustrations). Aucun tirage de direction n'a eu lieu : le monde était fixé par le commanditaire.
 
 ## Colors
 
 - **Papier** (#FFFCF6) : fond dominant. Le papier des illustrations et pictogrammes a été aplati sur cette valeur exacte avant encodage ; les images se posent sans cadre.
 - **Encre** (#232323) : texte, traits de section, contours, CTA principal, fond de la clôture « La bêta ».
-- **Pêche** (#F6C3A7) : intercalaires, soulignement des titres, pastilles d'étapes atteintes, épaisseurs des fiches dessinées, signature géante du pied de page. Jamais pour du texte courant.
+- **Pêche** (#F6C3A7) : intercalaires, surlignage des titres (bande basse), relief sous les boutons d'encre, aplats de fiches (pictogrammes, formule Équipe, colonne Trame du comparatif), signature géante du pied de page. Du texte en pêche seulement sur l'encre (libellés du bandeau « Vos données », chiffre de la preuve).
 - **Abricot** (#FFF0E5) : bandeau d'introduction, bande de preuve chiffrée, choix sélectionné, confirmation.
-- **Braise** (#A44023) : accent rare. Coches, section active, dernier intercalaire, drapeau, survol des CTA, focus, erreurs.
+- **Braise** (#A44023) : coches, section active, drapeau, focus, erreurs, en-tête « Trame » du comparatif, et le fond des deux clôtures (inscription, démo). Jamais pour le bouton principal, qui reste en encre.
 - **Secondaire** (#625B54) : texte d'appui sur papier (6,5:1). Sur encre : #D6CCC1 (9,9:1).
 - **Trait** (#B6A99C) : règles fines du relevé, de la grille et des colonnes.
 
@@ -194,11 +197,11 @@ Points de rupture : 640, 768, 880 (liens de navigation masqués), 900, 960, 1024
 
 ## Elevation & Depth
 
-Plat. Aucune ombre floue, ni verre, ni dégradé. La profondeur vient du dessin en perspective et du **relief du logo** : un calque pêche décalé sous une surface papier, sans flou. Ce relief apparaît dans le symbole, dans les tuiles du visuel d'intégrations et sous le tableau de la rubrique Intégrations (décalage de 6 à 12 px). Le détecteur le classe « dark-glow », mais ce n'est pas une lueur : c'est le motif de la marque.
+Plat, sans flou, ni verre, ni dégradé. La profondeur vient du dessin en perspective et d'**ombres franches décalées** (néo-brutalisme) : encre sous les surfaces posées sur le papier (fiches, tableau, formulaire, boutons à contour : 5 à 12 px), pêche sous les surfaces d'encre (boutons d'encre, tableau des intégrations : le relief du logo). Au survol un bouton se soulève (ombre plus longue), au clic il s'enfonce (ombre nulle). Le détecteur signale ces ombres (« hard-offset-shadow », « dark-glow ») : elles sont voulues.
 
 ## Shapes
 
-Rayons : 4 px pour les étiquettes, 6 px pour les contrôles, 8 px en haut pour les intercalaires, 10 px pour le panneau du formulaire. Traits de 1 px (sections, grilles), 1,5 px pour les contrôles et le fil, 3 px pour le dessin de l'étape 2.
+Rayons : 6 px pour les étiquettes, 8 px pour les contrôles et les cases cochées, 10 px en haut pour les intercalaires et pour les cases de pictogrammes, 12 px pour les fiches (pictogrammes, formules, estimation, comparatif). Traits de 3 px pour les sections, le bandeau, les intercalaires, les fiches et les boutons ; 2 px pour les règles internes (relevé, lignes du comparatif, champs) ; 1,5 px pour le fil.
 
 ## Components
 
@@ -207,8 +210,10 @@ Rayons : 4 px pour les étiquettes, 6 px pour les contrôles, 8 px en haut pour 
 - **Vapeur du café** : trois volutes au trait d'encre (SVG `.hero-steam` dans le hero) montent et s'effacent en boucle, sur tous les écrans ; masquées avec mouvement réduit. Coordonnées mesurées sur l'illustration 1090 × 920.
 - **Survol du hero** (souris seulement, absent avec mouvement réduit) : `v2.js` superpose à l'image du hero des calques découpés dans la même image (même fichier, rien à télécharger en plus). La fenêtre « Ma première semaine » et la carte « Mes ressources » se soulèvent avec une ombre franche, la loupe grandit et grossit les touches qu'elle couvre, et des touches du clavier s'allument en pêche l'une après l'autre. Chaque calque grandit autour de son centre plus qu'il ne se déplace, pour toujours recouvrir son empreinte d'origine. Les tracés (`clip-path` dans `v2.css`, touches dans `v2.js`) sont mesurés sur l'illustration 1090 × 920 : à refaire si l'image du hero change.
 - **Relevé** : lignes réglées, grand chiffre à gauche, libellé secondaire à droite.
-- **Grille tissée** : cases séparées par des règles, pictogramme de 112 px, preuve chiffrée en bande abricot sur toute la largeur.
-- **Boutons** : encre pleine ou contour, hauteur minimale de 52 px (48 px dans le bandeau), survol braise.
+- **Fiches « Pour l'arrivant »** : six fiches séparées, en aplats pêche, abricot et papier en diagonale, contour de 3 px et ombre d'encre ; le pictogramme est posé dans une case papier encadrée, agrandi dans sa case ; la preuve chiffrée est une fiche d'encre au chiffre pêche.
+- **Fiche du hero** : l'ordinateur posé sur une fiche papier encadrée (3 px), inclinée de −1,5°, avec un bandeau « Ma première semaine / 2 arrivées offertes » et une ombre d'encre de 12 px. Sa largeur est plafonnée pour commencer après la seconde ligne du titre. Les calques de survol et la vapeur sont posés dans `.hero__stage`.
+- **Surlignage** : `mark` est une bande pêche dans le bas des lettres (60 à 92 % de la hauteur), jamais pleine hauteur ; sur l'encre, un soulignement pêche.
+- **Boutons** : contour de 3 px. « Commencer gratuitement » en encre sur relief pêche (sur fond d'encre, contour papier) ; boutons secondaires en papier sur ombre d'encre. Hauteur minimale de 52 px (48 px dans le bandeau). Survol : soulèvement ; clic : enfoncement.
 - **Formulaire** : feuille papier sur fond d'encre. Chaque erreur s'affiche sous son champ (`aria-describedby`) ; le message d'état reste près du bouton pour l'aperçu et les échecs d'envoi.
 
 ## Do's and Don'ts
