@@ -158,7 +158,7 @@ components:
 
 **Atelier de transmission.** La page se lit comme un classeur que l'on feuillette : du papier, des traits d'encre, des onglets pêche, et un fil pointillé qui relie les étapes jusqu'au drapeau. Le savoir de l'équipe y est montré comme un objet qu'on range, qu'on prépare et qu'on transmet. Rien n'est personnifié : pas de mascotte ni de bulle de personnage. L'ancienne direction (téléphone, collines, pilules, ombres) sert d'anti-référence.
 
-**Direction « Classeur » (18 novembre 2026).** Le même monde, poussé vers le néo-brutalisme : traits d'encre de 3 px, ombres franches sans flou, titres en 800, aplats pêche et abricot, clôtures en braise. Choisie parmi trois maquettes (A Relief, B Classeur, C Planche) ; le cadre de l'ordinateur du hero vient de C, le bouton principal reste en encre.
+**Direction « Classeur » (18 novembre 2026).** Le même monde, poussé vers le néo-brutalisme : traits d'encre de 3 px, ombres franches sans flou, titres en 800, aplats pêche et abricot, clôtures en braise. Choisie parmi trois maquettes (A Relief, B Classeur, C Planche) ; le bouton principal reste en encre, et l'ordinateur du hero reste sans cadre.
 
 Direction imposée par le brief (palette, DM Sans, illustrations). Aucun tirage de direction n'a eu lieu : le monde était fixé par le commanditaire.
 
@@ -205,13 +205,13 @@ Rayons : 6 px pour les étiquettes, 8 px pour les contrôles et les cases coché
 
 ## Components
 
-- **Intercalaire** : onglet pêche posé sur le trait de section. Sa position avance de gauche à droite d'une section à l'autre (`--tab-i`, de 0 à 5), comme les intercalaires d'un classeur. Le dernier est braise.
+- **Intercalaire** : onglet pêche posé sur le trait de section. Sa position avance de gauche à droite d'une section à l'autre (`--tab-i`, de 0 à 5), comme les intercalaires d'un classeur. Le dernier est braise. Depuis la direction Classeur : 16 à 20 px en 800, contour de 3 px, coins de 12 px, pour rester visible.
 - **Fil** : chemin pointillé ondulé entre trois pastilles numérotées, terminé par un drapeau braise. Il se trace au défilement (`animation-timeline: view()`) et les pastilles passent du papier au pêche à son passage. Il est vertical sous 1024 px. Sans prise en charge ou avec mouvement réduit, il est dessiné et statique.
 - **Vapeur du café** : trois volutes au trait d'encre (SVG `.hero-steam` dans le hero) montent et s'effacent en boucle, sur tous les écrans ; masquées avec mouvement réduit. Coordonnées mesurées sur l'illustration 1090 × 920.
 - **Survol du hero** (souris seulement, absent avec mouvement réduit) : `v2.js` superpose à l'image du hero des calques découpés dans la même image (même fichier, rien à télécharger en plus). La fenêtre « Ma première semaine » et la carte « Mes ressources » se soulèvent avec une ombre franche, la loupe grandit et grossit les touches qu'elle couvre, et des touches du clavier s'allument en pêche l'une après l'autre. Chaque calque grandit autour de son centre plus qu'il ne se déplace, pour toujours recouvrir son empreinte d'origine. Les tracés (`clip-path` dans `v2.css`, touches dans `v2.js`) sont mesurés sur l'illustration 1090 × 920 : à refaire si l'image du hero change.
 - **Relevé** : lignes réglées, grand chiffre à gauche, libellé secondaire à droite.
-- **Fiches « Pour l'arrivant »** : six fiches séparées, en aplats pêche, abricot et papier en diagonale, contour de 3 px et ombre d'encre ; le pictogramme est posé dans une case papier encadrée, agrandi dans sa case ; la preuve chiffrée est une fiche d'encre au chiffre pêche.
-- **Fiche du hero** : l'ordinateur posé sur une fiche papier encadrée (3 px), inclinée de −1,5°, avec un bandeau « Ma première semaine / 2 arrivées offertes » et une ombre d'encre de 12 px. Sa largeur est plafonnée pour commencer après la seconde ligne du titre. Les calques de survol et la vapeur sont posés dans `.hero__stage`.
+- **Fiches « Pour l'arrivant »** : six fiches séparées, en aplats pêche, abricot et papier en diagonale, contour de 3 px et ombre d'encre ; le pictogramme est posé dans une case papier encadrée, agrandi dans sa case ; la preuve chiffrée est une fiche d'encre au chiffre pêche. Le contenu de chaque fiche est centré verticalement (pictogrammes alignés sur une même rangée) ; au survol, la fiche se soulève légèrement.
+- **Hero** : l'ordinateur reste posé à même le papier, sans cadre (une fiche encadrée a été essayée puis retirée le 18 novembre 2026 : moins efficace). Les calques de survol et la vapeur sont posés dans `.hero__stage`.
 - **Surlignage** : `mark` est une bande pêche dans le bas des lettres (60 à 92 % de la hauteur), jamais pleine hauteur ; sur l'encre, un soulignement pêche.
 - **Boutons** : contour de 3 px. « Commencer gratuitement » en encre sur relief pêche (sur fond d'encre, contour papier) ; boutons secondaires en papier sur ombre d'encre. Hauteur minimale de 52 px (48 px dans le bandeau). Survol : soulèvement ; clic : enfoncement.
 - **Formulaire** : feuille papier sur fond d'encre. Chaque erreur s'affiche sous son champ (`aria-describedby`) ; le message d'état reste près du bouton pour l'aperçu et les échecs d'envoi.

@@ -523,7 +523,7 @@
 .trame .nav__link{font-weight:600}
 .trame .section{border-top:var(--rule) solid var(--ink)}
 .trame .intro{border-block:var(--rule) solid var(--ink)}
-.trame .tab{top:calc(-1 * var(--section) - var(--rule));padding:9px 18px 7px;border:var(--rule) solid var(--ink);border-bottom:0;border-radius:10px 10px 0 0;font-size:15px;font-weight:800}
+.trame .tab{top:calc(-1 * var(--section) - var(--rule));padding:12px 24px 10px;border:var(--rule) solid var(--ink);border-bottom:0;border-radius:12px 12px 0 0;font-size:clamp(16px,1.35vw,20px);font-weight:800;letter-spacing:-.01em;line-height:1.2}
 .trame .tab--last{background:var(--ink);color:var(--paper)}
 
 /* Boutons : encre (« Commencer gratuitement ») sur relief pêche, contour sur relief d'encre */
@@ -537,22 +537,11 @@
 .trame .btn--on-ink,.trame .btn--on-ink:hover,.trame .btn--on-ink:active{background:var(--ink);color:var(--paper);border-color:var(--paper)}
 .trame .btn:disabled{transform:none;box-shadow:none}
 
-/* Hero : cases cochées et ordinateur posé sur une fiche, légèrement de biais */
+/* Hero : cases cochées ; l'ordinateur reste posé à même le papier, sans cadre */
 .trame .hero .ticks{gap:10px}
 .trame .hero .ticks li{padding:10px 14px;border:var(--rule) solid var(--ink);border-radius:8px;background:var(--paper);line-height:1.45}
 .trame .tick{stroke-width:3}
-.trame .hero__frame{background:var(--paper);border:var(--rule) solid var(--ink);box-shadow:12px 12px 0 var(--ink);transform:rotate(-1.5deg)}
-.trame .hero__strip{display:flex;justify-content:space-between;gap:16px;padding:10px 16px;border-bottom:var(--rule) solid var(--ink);font-size:14px;font-weight:800;line-height:1.2}
-.trame .hero__strip span:last-child{color:var(--ember)}
 .trame .hero__stage{position:relative}
-.trame .hero__art{margin-right:12px}
-@media (min-width:900px){
-  /* La fiche démarre sous la première ligne du titre ; sa hauteur suit celle de l'écran. */
-  .trame .hero__art{--lift:calc(1.06 * var(--h1) + var(--hero-gap));
-    --art-h:calc(100svh - var(--masthead) - var(--hero-pad) - 2.15 * var(--h1) - var(--hero-gap) + var(--lift) - 44px);
-    width:min(calc(100% - 12px),max(400px,calc((var(--art-h) - 50px) * 1090 / 920 + 6px)),calc(min(1240px,100vw - 2 * var(--gutter)) - 7.6 * var(--h1) - 40px));margin:calc(-1 * var(--lift)) 12px 0 0;justify-self:end}
-  /* largeur plafonnée : la fiche commence toujours après « en quelques jours. » */
-}
 
 /* Vos données : bande d'encre */
 .trame .trust{background:var(--ink);color:var(--paper);border-top:0}
@@ -587,6 +576,9 @@
 .trame .loom__cell:nth-child(6n+3),.trame .loom__cell:nth-child(6n+5){background:var(--paper)}
 .trame .loom__cell p{color:var(--ink)}
 .trame .loom__cell .picto{background:var(--paper);border:var(--rule) solid var(--ink);border-radius:10px}
+/* Chaque fiche centre son contenu : les pictogrammes d'une même rangée sont à la même hauteur. */
+.trame .loom__cell{align-content:center;transition:transform 160ms var(--press),box-shadow 160ms var(--press)}
+.trame .loom__cell:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink)}
 @media (min-width:1024px){
   .trame .loom__cell{grid-template-columns:clamp(92px,min(7.6vw,13.5svh),128px) minmax(0,1fr);padding:clamp(14px,1.9svh,22px) clamp(14px,1.4vw,22px)}
   .trame .loom__cell h3{font-size:clamp(18px,1.4vw,21px)}
