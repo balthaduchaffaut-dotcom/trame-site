@@ -190,4 +190,42 @@
     range.addEventListener('change', function(){ track('estimator_value', { arrivals: parseInt(range.value, 10) }); });
     update();
   }
+
+  // chiffres du problème : ils montent de 0 à leur valeur quand la section entre à l'écran.
+  // Le HTML garde la valeur finale (sans script, ou si l'utilisateur limite les animations).
+  var figures = Array.prototype.slice.call(document.querySelectorAll('.ledger dt'));
+  if (figures.length && !reduce && 'IntersectionObserver' in window && window.requestAnimationFrame) {
+    var NUM = /\d+(?:,\d+)?/g, DURATION = 1400;
+    var parts = figures.map(function(el){
+      var text = el.textContent;
+      el.setAttribute('aria-label', text);
+      return { el: el, text: text, nums: (text.match(NUM) || []).map(function(s){
+        var dec = s.indexOf(',') === -1 ? 0 : s.split(',')[1].length;
+        return { value: parseFloat(s.replace(',', '.')), dec: dec };
+      }) };
+    });
+    var render = function(f, k){
+      var i = 0;
+      f.el.textContent = f.text.replace(NUM, function(){
+        var n = f.nums[i++], v = n.value * k;
+        return (n.dec ? v.toFixed(n.dec) : String(Math.round(v))).replace('.', ',');
+      });
+    };
+    parts.forEach(function(f){ render(f, 0); });
+    var run = function(){
+      var start = null;
+      var step = function(now){
+        if (start === null) start = now;
+        var x = Math.min(1, (now - start) / DURATION), k = 1 - Math.pow(1 - x, 3);
+        parts.forEach(function(f){ render(f, k); });
+        if (x < 1) requestAnimationFrame(step);
+        else parts.forEach(function(f){ f.el.textContent = f.text; });
+      };
+      requestAnimationFrame(step);
+    };
+    var io = new IntersectionObserver(function(entries){
+      if (entries.some(function(e){ return e.isIntersecting; })) { io.disconnect(); run(); }
+    }, { threshold: 0.35 });
+    io.observe(document.querySelector('.ledger'));
+  }
 })();
