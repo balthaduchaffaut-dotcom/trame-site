@@ -583,7 +583,7 @@
   .trame .loom__cell{grid-template-columns:clamp(92px,min(7.6vw,13.5svh),128px) minmax(0,1fr);padding:clamp(14px,1.9svh,22px) clamp(14px,1.4vw,22px)}
   .trame .loom__cell h3{font-size:clamp(18px,1.4vw,21px)}
 }
-.trame .proof{background:var(--ink);color:var(--paper)}
+.trame .proof{background:var(--ink);color:var(--paper);box-shadow:8px 8px 0 var(--peach)}
 .trame .proof__value{color:var(--peach)}
 .trame .proof__source{color:var(--on-ink-muted)}
 
