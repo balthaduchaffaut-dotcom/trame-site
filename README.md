@@ -1,6 +1,6 @@
 # Trame · site
 
-Site de Trame : accueil et tarifs. HTML, CSS et JavaScript statiques, sans dépendance ni service tiers chargé.
+Site de Trame : accueil, cas d'usage et tarifs. HTML, CSS et JavaScript statiques, sans dépendance ni service tiers chargé.
 
 C'est le site de Trame. Il remplace l'ancienne landing Trame (`trame-landing`), dont l'adresse redirige désormais ici. Il est séparé de l'application : on ne se connecte pas sur le site.
 
@@ -15,6 +15,7 @@ python3 -m http.server 8767 --directory .
 | Fichier | Contenu |
 |---|---|
 | `index.html` | Accueil (repris de la landing Trame), formulaire d'inscription, mentions légales et confidentialité. |
+| `cas-usage.html` | Cas d'usage : six moments de l'arrivant (Inès, alternante, personne inventée) et six situations d'entreprise, chacune avec ce que fait Trame et d'où il le sait. Ajoutée le 24 novembre 2026 après l'analyse de Weloom. |
 | `tarifs.html` | Trois formules, estimation selon le nombre d'arrivées, questions fréquentes, bandeau démo. |
 | `site.css`, `site.js` | Styles et comportements communs (menu des petits écrans, mesure, formulaire, estimation, démo, survol du hero). |
 
